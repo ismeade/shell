@@ -154,7 +154,7 @@ done < ${build_path}/registry_images.txt
 rm -rf .DS_Store
 
 echo "压缩数据文件..."
-tar -zcf ${build_path}/registry_data.tar.gz ${build_path}/registry_data ${build_path}/registry_images.txt
+tar -zcf ${build_path}/registry_data.tar.gz -C ${build_path} registry_data registry_images.txt
 
 echo "清理本地临时仓库文件..."
 rm -rf ${build_path}/registry_data ${build_path}/registry_images.txt
